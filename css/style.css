@@ -1,0 +1,43 @@
+.gallery img.response-img {
+    margin: 10px;
+    width: 100%;
+}
+
+.container {
+    margin-top : 20px;
+}
+
+body {
+    font-size : 18px;
+}
+
+.header {
+    height : 150px;
+    margin-top : 50px;
+    margin-bottom : 50px;
+    text-align : center;
+}
+
+.new-section-header {
+    margin-top : 90px;
+    margin-bottom : 70px;
+    text-align: center;
+}
+
+.unique {
+    width : 100%;
+    padding-top : 50px;
+    padding-bottom : 50px;
+    margin-top : 50px;
+    margin-bottom : 50px;
+    text-align: center;
+}
+.unique>.content {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.parallax-container {
+    margin-top : 70px;
+    margin-bottom : 70px;
+}
