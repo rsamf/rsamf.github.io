@@ -29,34 +29,41 @@
 <!--[if lt IE 8]>
 <!--<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
 <!--[endif]-->
-
-<div class="navbar-fixed">
-    <nav class="white">
-        <div class="nav-wrapper white z-depth-4">
-            <div class="container">
-                <div class="brand-logo black-text">[Logo] <span class="hide-on-med-and-up">Lorem Ipsum</span></div>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#Home" class="black-text">Home</a></li>
-                    <li><a href="#About" class="black-text">About</a></li>
-                    <li><a href="#Contact" class="black-text">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-
 <header>
+
+    <div class="navbar-fixed nav-fixed z-depth-4">
+        <nav class="white">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <div class="brand-logo black-text">[x] <span class="hide-on-med-and-up">Lorem Ipsum</span></div>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#Home" class="black-text">Home</a></li>
+                        <li><a href="#About" class="black-text">About</a></li>
+                        <li><a href="#Contact" class="black-text">Contact</a></li>
+                    </ul>
+                    <a href="#" data-activates="mobile-nav" class="hide-on-large-only" id="menu-button"><i class="material-icons black-text">menu</i></a>
+                </div>
+            </div>
+        </nav>
+        <ul class="side-nav" id="mobile-nav">
+            <li><a href="#Home" class="black-text">Home</a></li>
+            <li><a href="#About" class="black-text">About</a></li>
+            <li><a href="#Contact" class="black-text">Contact</a></li>
+        </ul>
+    </div>
+
+
+
     <div id="Home">
-        <div class="header valign-wrapper hide-on-small-and-down">
+        <div class="header valign-wrapper hide-on-small-only">
             <div class="valign center-block animated fadeInUp">
                 Lorem Ipsum
             </div>
         </div>
     </div>
 
-
     <!--<div class="banner"></div>-->
-    <div class="parallax-container">
+    <div class="parallax-container hide-on-small-only">
         <div class="parallax">
             <img src="https://i.ytimg.com/vi/vR2Gc13L8vs/maxresdefault.jpg" alt="">
             <!-- Options -->
@@ -106,7 +113,7 @@
         </div>
     </div>
 
-    <div class="parallax-container">
+    <div class="parallax-container hide-on-small-only">
         <div class="parallax">
             <img src="https://i.ytimg.com/vi/vR2Gc13L8vs/maxresdefault.jpg" alt="">
         </div>

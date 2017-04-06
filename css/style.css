@@ -3,7 +3,12 @@
     width: 100%;
 }
 
-.container {
+.nav-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 998;
 }
 
 body {
@@ -12,10 +17,10 @@ body {
 
 .header {
     height : 150px;
-    margin-top : 50px;
+    margin-top : 125px;
     margin-bottom : 50px;
     text-align : center;
-    font-family: 'Righteous', cursive;
+    /*font-family: 'Righteous', cursive;*/
     font-size : 80px;
 }
 

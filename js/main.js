@@ -1,6 +1,13 @@
 $(document).ready(function(){
     Materialize.toast('Welcome!', 3000);
     $('.parallax').parallax();
+    $("#menu-button").sideNav({
+        closeOnClick: true,
+        draggable: true
+    });
+    $(".side-nav a").on("click", function(evt){
+        $("#menu-button").sideNav('hide');
+    });
 
     /*
      *  D3
