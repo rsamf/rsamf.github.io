@@ -16,6 +16,8 @@ body {
     margin-top : 50px;
     margin-bottom : 50px;
     text-align : center;
+    font-family: 'Righteous', cursive;
+    font-size : 80px;
 }
 
 .new-section-header {
@@ -28,16 +30,32 @@ body {
     width : 100%;
     padding-top : 50px;
     padding-bottom : 50px;
-    margin-top : 50px;
-    margin-bottom : 50px;
+    margin-top : 100px;
+    margin-bottom : 100px;
     text-align: center;
 }
 .unique>.content {
-    margin-left: 25%;
-    margin-right: 25%;
+
 }
 
 .parallax-container {
     margin-top : 70px;
     margin-bottom : 70px;
+    height: 350px;
+}
+
+#chart .bar {
+    display: inline-block;
+    text-align: center;
+    /*padding: 3px;*/
+    vertical-align: bottom;
+    margin: 1px;
+    width : 40px;
+    height: 75px;
+    color: white;
+    background-color : teal;
+}
+
+footer {
+    margin-top : 60px;
 }
