@@ -9,31 +9,60 @@ $(document).ready(function(){
         $("#menu-button").sideNav('hide');
     });
 
+    var options = [
+        {
+            selector : '#about-animated.animated.pre-animated',
+            offset: 150,
+            callback : function(el) {
+                $(el).removeClass("pre-animated");
+                $(el).addClass("fadeInUp");
+                console.log("HELLO");
+            }
+        },
+        {
+            selector : '#video-animated.animated.pre-animated',
+            offset: 150,
+            callback : function(el) {
+                $(el).removeClass("pre-animated");
+                $(el).addClass("fadeInUp");
+                console.log("HELLO");
+            }
+        },
+        {
+            selector : '#gallery1-animated.animated.pre-animated',
+            offset: 150,
+            callback : function(el) {
+                $(el).removeClass("pre-animated");
+                $(el).addClass("fadeInUp");
+                console.log("HELLO");
+            }
+        },
+        {
+            selector : '#gallery2-animated.animated.pre-animated',
+            offset: 150,
+            callback : function(el) {
+                $(el).removeClass("pre-animated");
+                $(el).addClass("fadeInUp");
+                console.log("HELLO");
+            }
+        },
+        {
+            selector : '#chart-animated.animated.pre-animated',
+            offset: 150,
+            callback : function(el) {
+                $(el).removeClass("pre-animated");
+                $(el).addClass("fadeInUp");
+                console.log("HELLO");
+            }
+        }
+    ];
+
+    Materialize.scrollFire(options);
+
     /*
      *  D3
      */
 
-    /*var x = d3.scale.linear()
-        .domain([0, d3.max(data)])
-        .range([0, 420]);
-
-    var data = [4, 8, 15, 16, 23, 42];
-    var element = d3.select("#chart");
-
-    element.style("color", "black")
-        .style("background-color", "white");
-
-    var bar = element.selectAll("div");
-
-    var barEnter =
-        bar.data(data).enter().append("div")
-        .style("width", function(d) {
-            return (x(d) + "px");
-        });
-
-    barEnter.text(function(d) {
-        return d;
-    });*/
 
     var data = [4, 8, 15, 16, 23, 42];
 
