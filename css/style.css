@@ -6,9 +6,6 @@
     margin-bottom : 50px;
 }
 
-.gallery .content {
-    margin-top : 10px;
-}
 
 .about .content {
     margin-bottom: 20px;
@@ -25,7 +22,8 @@ body {
     font-size : 18px;
 }
 
-.header {
+
+.page-header {
     height : 150px;
     margin-top : 125px;
     margin-bottom : 50px;
@@ -35,6 +33,21 @@ body {
 
 .righteous {
     font-family: 'Righteous', cursive;
+}
+
+.logo.sm {
+    height:  24px;
+    width : 100px;
+}
+
+.logo.med {
+    height : 48px;
+    width : 200px;
+}
+
+.logo.lg {
+    height : 72px;
+    width : 300px;
 }
 
 .small-header {
@@ -49,10 +62,23 @@ body {
     background-size : cover;
 }
 
-.new-section-header {
-    margin-top : 50px;
-    margin-bottom : 30px;
-    text-align: center;
+.section {
+    margin-top : 20px;
+    margin-bottom : 20px;
+}
+.section.extra-margin {
+    margin-top : 125px;
+    margin-bottom : 125px;
+}
+.section .header {
+    margin-bottom : 20px;
+}
+.section .header.extra-margin {
+    margin-bottom : 50px;
+}
+
+.section .content {
+    margin-bottom : 10px;
 }
 
 .unique {
@@ -65,8 +91,8 @@ body {
 }
 
 .parallax-container {
-    margin-top : 70px;
-    margin-bottom : 70px;
+    margin-top : 10px;
+    margin-bottom : 10px;
     height: 350px;
 }
 

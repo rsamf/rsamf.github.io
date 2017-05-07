@@ -8,11 +8,22 @@ $(document).ready(function(){
     $(".side-nav a").on("click", function(evt){
         $("#menu-button").sideNav('hide');
     });
+    $('.about.collapsible').collapsible('open', 0);
+    $('.about.collapsible').collapsible('open', 1);
+    $('.about.collapsible').collapsible('open', 2);
+    $('.about.collapsible').collapsible('open', 3);
 
+    //$('.timeline.collapsible').collapsible('open', 0);
+    //$('.timeline.collapsible').collapsible('open', 1);
+    //$('.timeline.collapsible').collapsible('open', 2);
+    $('.timeline.collapsible').collapsible('open', 3);
+
+
+    const offset = 50;
     var options = [
         {
-            selector : '#about-animated.animated.pre-animated',
-            offset: 150,
+            selector : '#welcome',
+            offset: offset,
             callback : function(el) {
                 $(el).removeClass("pre-animated");
                 $(el).addClass("fadeInUp");
@@ -20,8 +31,8 @@ $(document).ready(function(){
             }
         },
         {
-            selector : '#video-animated.animated.pre-animated',
-            offset: 150,
+            selector : '#optical.animated.pre-animated',
+            offset: offset,
             callback : function(el) {
                 $(el).removeClass("pre-animated");
                 $(el).addClass("fadeInUp");
@@ -29,8 +40,8 @@ $(document).ready(function(){
             }
         },
         {
-            selector : '#gallery1-animated.animated.pre-animated',
-            offset: 150,
+            selector : '#mechanical.animated.pre-animated',
+            offset: offset,
             callback : function(el) {
                 $(el).removeClass("pre-animated");
                 $(el).addClass("fadeInUp");
@@ -38,17 +49,8 @@ $(document).ready(function(){
             }
         },
         {
-            selector : '#gallery2-animated.animated.pre-animated',
-            offset: 150,
-            callback : function(el) {
-                $(el).removeClass("pre-animated");
-                $(el).addClass("fadeInUp");
-                console.log("HELLO");
-            }
-        },
-        {
-            selector : '#chart-animated.animated.pre-animated',
-            offset: 150,
+            selector : '#application.animated.pre-animated',
+            offset: offset,
             callback : function(el) {
                 $(el).removeClass("pre-animated");
                 $(el).addClass("fadeInUp");
@@ -59,27 +61,4 @@ $(document).ready(function(){
 
     Materialize.scrollFire(options);
 
-    /*
-     *  D3
-     */
-
-
-    var data = [4, 8, 15, 16, 23, 42];
-
-    var x = d3.scaleLinear()
-        .domain([0, d3.max(data)])
-        .range([0, 420]);
-
-    d3.select("#chart")
-        .selectAll(".bar")
-        .data(data)
-        .enter()
-        .append("div")
-        .attr("class", "bar")
-        .style("height", function(d) {
-            return x(d) + "px";
-        })
-        .text(function(d) {
-            return d;
-        });
 });

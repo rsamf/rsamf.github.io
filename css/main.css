@@ -106,14 +106,10 @@ textarea {
     padding-bottom: 20%;
 }
 
-
-
-
-
-
-
-
-
+.center-align-block {
+    display: block;
+    margin: 0 auto;
+}
 
 
 
