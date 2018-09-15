@@ -101,7 +101,7 @@ const Loadie = (() => {
         }, 1536);
       } else if(!doneFlag) {
         doneFlag = true;
-        setTimeout(listener.done, 3000);
+        setTimeout(listener.done, 2400);
       }
     }
   }
