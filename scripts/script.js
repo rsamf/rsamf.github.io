@@ -1,14 +1,14 @@
-Loadie.start();
-document.getElementById("pages").style.display = "none";
-setTimeout(()=>{
-  Loadie.stop();
-  Loadie.on("done", () => {
-    document.getElementById("pages").style.display = "block";
-    start();
-  });
-}, 3000);
+// Loadie.start();
+// document.getElementById("pages").style.display = "none";
+// setTimeout(()=>{
+//   Loadie.stop();
+//   Loadie.on("done", () => {
+//     document.getElementById("pages").style.display = "block";
+//     start();
+//   });
+// }, 3000);
 
-// start();
+start();
 
 function start() {
   Scrollie.setup({
