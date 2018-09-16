@@ -127,16 +127,16 @@ body {
 
 .page .face .container.left img {
   max-height: 50%;
-  box-shadow: 5px 10px 5px black;
+  box-shadow: 2px 4px 2px black;
 }
 
 .page .face .container.left .title {
-  text-shadow: 3px 6px black;
+  text-shadow: 2px 4px 2px black;
 }
 
 .page .face .container.right {
   max-width: 40%;
-  text-shadow: -3px 6px 2px black;
+  /* text-shadow: -3px 6px 2px black; */
   margin-right: 5%;
 }
 
@@ -149,7 +149,7 @@ body {
   font-size: 12px;
   margin: 20% 2%;
   text-decoration: none;
-  box-shadow: 5px 10px 5px black;
+  box-shadow: 2px 4px 2px black;
 }
 
 .page .face .container .button.disabled {
@@ -168,7 +168,7 @@ body {
   height: 40px;
   margin-right: 2%;
   border-radius: 50%;
-  box-shadow: -5px 5px 2px black;
+  box-shadow: -2px 2px 2px black;
 }
 
 .page .face .container .icon img {
