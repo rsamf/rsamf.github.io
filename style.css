@@ -130,6 +130,13 @@ body {
   box-shadow: 2px 4px 2px black;
 }
 
+.page .face .container.left img#mech {
+  width: 286px;
+  height: 329px;
+  max-height:100%;
+  box-shadow: 2px 4px 2px black;
+}
+
 .page .face .container.left .title {
   text-shadow: 2px 4px 2px black;
 }
@@ -222,7 +229,7 @@ video.hidden {
 }
 
 /*
-  PAGE 1
+  PAGE 1-8
 */
 
 #page-1 {
@@ -247,4 +254,7 @@ video.hidden {
 }
 #page-7 {
   background-color: #d30808;
+}
+#page-8 {
+  background-color: #c6bdf7;
 }
