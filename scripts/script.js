@@ -1,5 +1,5 @@
-Loadie.start();
 document.getElementById("pages").style.display = "none";
+Loadie.start();
 setTimeout(()=>{
   Loadie.stop();
   Loadie.on("done", () => {
@@ -39,6 +39,7 @@ function start() {
     });
   };
 
+  applyTitle("c.png", "C");
   applyTitle("aws.png", "AWS AppSync");
   applyTitle("cs.png", "C#");
   applyTitle("css.png", "CSS");
@@ -52,4 +53,15 @@ function start() {
   applyTitle("unity.png", "Unity");
   applyTitle("vue.png", "Vue");
   applyTitle("w2p.png", "web2py");
+
+  // setTimeout(()=>{
+  //   document.getElementById("pages").style.display = "none";
+  //   document.getElementById("pages").style.display = "block";
+  // }, 5000)
+  let bars = Array.from(document.getElementsByClassName("bars"));
+  setTimeout(()=>{
+    bars.forEach((el) => {
+      el.style.zIndex = 0;
+    });
+  }, 1000);
 }

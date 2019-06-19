@@ -131,8 +131,8 @@ body {
 }
 
 .page .face .container.left img#mech {
-  width: 286px;
-  height: 329px;
+  width: 190px;
+  height: 219px;
   max-height:100%;
   box-shadow: 2px 4px 2px black;
 }
@@ -257,4 +257,8 @@ video.hidden {
 }
 #page-8 {
   background-color: #c6bdf7;
+}
+
+.LI-profile-badge {
+  z-index: 10;
 }
