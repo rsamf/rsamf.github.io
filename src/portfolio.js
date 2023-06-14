@@ -68,10 +68,6 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-python"
     },
     {
-      skillName: "AI/ML + Pytorch",
-      fontAwesomeClassname: "fab fa-brain"
-    },
-    {
       skillName: "reactjs",
       fontAwesomeClassname: "fab fa-react"
     },
