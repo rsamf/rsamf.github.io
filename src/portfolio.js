@@ -23,9 +23,9 @@ const greeting = {
   username: "RS Franklin",
   title: "Hi, I'm Richard",
   subTitle: emoji(
-    "A passionate Software Engineer with a love for a wide range of Computer Science topics including AI/ML, Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
+    "I'm a passionate graduate student with a focus in AI/ML research. I also have a love for a wide range of other topics including Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
   ),
-  resumeLink: "https://drive.google.com/file/d/17xUdtbS56wCKT4TBOCzOaak6HkeIBgDf/view?usp=sharing", // Set to empty to hide the button
+  resumeLink: "https://drive.google.com/file/d/1H4fUN7VhcUeVn2IMD6YzYI3Ys3q6wc0P/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -105,7 +105,7 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "University of Washington",
+      schoolName: "University of Washington, Tacoma",
       logo: require("./assets/images/uw-logo.png"),
       subHeader: "Master of Science in Computer Science",
       duration: "September 2022 - August 2023 (expected)",
@@ -216,17 +216,17 @@ const bigProjects = {
   title: "Big Projects",
   subtitle: "My highlighted projects",
   projects: [
-    {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Autonomous Vacuuming Robot (\"Roomba\")",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        // {
-        //   name: "Visit Website",
-        //   url: "http://nextu.se/"
-        // }
-      ]
-    },
+    // {
+    //   image: require("./assets/images/nextuLogo.webp"),
+    //   projectName: "Autonomous Vacuuming Robot (\"Roomba\")",
+    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    //   footerLink: [
+    //     // {
+    //     //   name: "Visit Website",
+    //     //   url: "http://nextu.se/"
+    //     // }
+    //   ]
+    // },
     {
       image: require("./assets/images/limelight.jpg"),
       projectName: "Limelight - Collaborative DJ",
@@ -363,13 +363,13 @@ const achievementSection = {
   display: true // Set false to hide this section, defaults to true
 };
 
-// Blogs Section
+// Awards Section
 
-const blogSection = {
+const awardSection = {
   title: "Hackathon Awards 🏆",
   subtitle: "With love for coding and developing cool things, I participated in 10+ hackathons. Here are my winnings:",
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
+  awards: [
     {
       url: "https://devpost.com/software/i-gotta-go",
       title: "TreeHacks 2018",
@@ -449,7 +449,7 @@ export {
   openSource,
   bigProjects,
   achievementSection,
-  blogSection,
+  awardSection,
   talkSection,
   podcastSection,
   contactInfo,
