@@ -173,7 +173,8 @@ const workExperiences = {
       date: "October 2022 - Present",
       desc: "Guiding students in building out their creative projects",
       descBullets: [
-        "Facilated projects with 3D printing, laser cutting, poster printing, vinyl cutting, and sewing",
+        "The UW Tacoma library maintains a facility where people come together to collaborate on creative projects",
+        "I support and supervise and Makerspace projects by guiding students and faculty through the use of the available equipment in the space which includes a 3D printer, laser cutter, poster printer, vinyl cutter, and sewing machine"
       ]
     },
     {
