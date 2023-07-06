@@ -25,7 +25,7 @@ const greeting = {
   subTitle: emoji(
     "I'm a passionate graduate student with a focus in AI/ML research. I also have a love for a wide range of other topics including Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
   ),
-  resumeLink: "https://drive.google.com/file/d/1H4fUN7VhcUeVn2IMD6YzYI3Ys3q6wc0P/view?usp=sharing", // Set to empty to hide the button
+  resumeLink: "https://drive.google.com/file/d/1V3tJcLTpje5wGSh1jfmzRng17wr5Rbxb/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -173,7 +173,8 @@ const workExperiences = {
       date: "October 2022 - Present",
       desc: "Guiding students in building out their creative projects",
       descBullets: [
-        "Facilated projects with 3D printing, laser cutting, poster printing, vinyl cutting, and sewing",
+        "Facilitated makers and their creative projects with my guidance of 3D printing, laser cutting, poster printing, vinyl cutting, and sewing at the Makerspace",
+        "Maintained safety and accessibility of Makerspace equipment and tools"
       ]
     },
     {
