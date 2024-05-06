@@ -20,10 +20,10 @@ const illustration = {
 };
 
 const greeting = {
-  username: "RS Franklin",
+  username: "rsamf",
   title: "Hi, I'm Richard",
   subTitle: emoji(
-    "I'm a passionate graduate student with a focus in AI/ML research. I also have a love for a wide range of other topics including Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
+    "I have a love for a wide range of topics including Machine Learning, Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
   ),
   resumeLink: "https://drive.google.com/file/d/1V3tJcLTpje5wGSh1jfmzRng17wr5Rbxb/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -34,7 +34,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/rsamf",
   linkedin: "https://www.linkedin.com/in/rsamfranklin/",
-  gmail: "rsamf@uw.edu",
+  gmail: "rsamfranklin@gmail.com",
   // gitlab: "https://gitlab.com/saadpasta",
   // facebook: "https://www.facebook.com/saad.pasta7",
   // medium: "https://medium.com/@saadpasta",
@@ -48,10 +48,11 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "Graduate Student with a focus in AI/ML",
+  subTitle: "Software Engineer and leading development of ML models",
   skills: [
-    emoji("⚡ Currently researching and publishing my work on long-tailed visual recognition"),
-    emoji("⚡ Web and mobile application development with React, AWS, Docker, Kubernetes, and more..."),
+    emoji("⚡ Researching and developing custom ML models for virtual try-on and clothing recommendation systems"),
+    emoji("⚡ Graduated from UW with an MS degree where I conducted research in multimodal long-tailed visual recognition"),
+    emoji("⚡ Web and mobile application development with React, AWS, GCP, Docker, Kubernetes, and more..."),
     emoji("⚡ Experienced building out telemetry and command services for space program delivery")
   ],
 
@@ -105,25 +106,26 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "University of Washington, Tacoma",
+      schoolName: "University of Washington",
       logo: require("./assets/images/uw-logo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2022 - August 2023 (expected)",
-      desc: "Conducted research in long-tailed learning for computer vision",
-      // descBullets: [
-      //   "",
-      //   ""
-      // ]
+      subHeader: "MS Computer Science",
+      duration: "September 2022 - August 2023",
+      desc: "Conducted research in multimodal long-tailed learning for computer vision",
+      descBullets: [
+        "Focused my education in Machine Learning",
+        "Developed a novel approach to multimodal long-tailed learning for my thesis",
+        "Published a paper to The 24th IEEE International Conference on Mobile Data Management and one more currently under review"
+      ]
     },
     {
       schoolName: "University of California, Santa Cruz",
       logo: require("./assets/images/ucsc-slug-logo.png"),
       subHeader: "BS Computer Science, Minor Electrical Engineering",
       duration: "September 2015 - August 2019",
-      desc: "Graduated with honors. Took courses about Software Engineering, Machine Learning, Operating Systems, and more ...",
-      // descBullets: [
-      //   ""
-      // ]
+      desc: "Took courses about Software Engineering, Machine Learning, Operating Systems, and more ...",
+      descBullets: [
+        "Graduated with honors"
+      ]
     }
   ]
 };
@@ -135,26 +137,22 @@ const techStack = {
   experience: [
     {
       Stack: "Python", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      progressPercentage: "99%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Typescript/Javascript",
       progressPercentage: "90%"
     },
     {
-      Stack: "C#",
-      progressPercentage: "80%"
-    },
-    {
       Stack: "Terraform",
       progressPercentage: "80%"
     },
     {
-      Stack: "C++",
-      progressPercentage: "60%"
+      Stack: "C#",
+      progressPercentage: "80%"
     },
     {
-      Stack: "Java",
+      Stack: "C++",
       progressPercentage: "60%"
     }
   ],
@@ -167,13 +165,25 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
+        role: "Founder",
+        company: "Heddle AI",
+        companylogo: require("./assets/images/heddle-logo.png"),
+        date: "August 2023 - Present",
+        desc: "Building a virtual try-on and clothing recommendation platform for online shoppers and fashion designers",
+        descBullets: [
+          "Gathering data and designing, training, and evaluating custom ML models for virtual try-on and clothing recommendation systems",
+          "Leading a team of developers to build out a virtual try-on SaaS application",
+          "Acting out multiple roles in the startup including software engineer, data scientist, and product manager"
+        ]
+    },
+    {
       role: "Makerspace Student Assistant",
-      company: "University of Washington, Tacoma",
+      company: "University of Washington",
       companylogo: require("./assets/images/uw-logo.png"),
-      date: "October 2022 - Present",
-      desc: "Guiding students in building out their creative projects",
+      date: "October 2022 - August 2023",
+      desc: "Guiding students in building out their creative projects while hile being a graduate student at UW",
       descBullets: [
-        "Facilitated makers and their creative projects with my guidance of 3D printing, laser cutting, poster printing, vinyl cutting, and sewing at the Makerspace",
+        "Guided makers in building their creative projects with my expertise in 3D printing, laser cutting, poster printing, vinyl cutting, and sewing at the Makerspace",
         "Maintained safety and accessibility of Makerspace equipment and tools"
       ]
     },
@@ -214,8 +224,8 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "My highlighted projects",
+  title: "Projects",
+  subtitle: "My highlighted projects that I worked on myself",
   projects: [
     // {
     //   image: require("./assets/images/nextuLogo.webp"),
@@ -373,7 +383,7 @@ const awardSection = {
   awards: [
     {
       url: "https://devpost.com/software/i-gotta-go",
-      title: "TreeHacks 2018",
+      title: "Stanford TreeHacks 2018",
       description: "Submitted I Gotta Go! Winner of mLab Sponsor prize."
     },
     {
@@ -389,6 +399,26 @@ const awardSection = {
   ],
   display: true // Set false to hide this section, defaults to true
 };
+
+// Publications Section
+const publicationsInfo = {
+    title: "Publications",
+    subtitle: "My published papers while at University of Washington",
+    publications: [
+      {
+        title: "SolarDetector: A Transformer-based Neural Network for the Detection and Masking of Solar Panels",
+        year: "2023",
+        authors: "Salama, A., Hendawi, A., Franklin, R., Al-Masri, E., Ali, M.",
+        url: "https://dl.acm.org/doi/10.1145/3589132.3625649",
+        conference: "SIGSPATIAL '23",
+        descBullets: [
+            "This paper presents an efficient system to detecting solar panels from satellite images and visualizing them."
+        ]
+      }
+    ],
+    currentlyInReview: 1,
+    display: true // Set false to hide this section, defaults to true
+}
 
 // Talks Sections
 
@@ -426,7 +456,7 @@ const contactInfo = {
   title: emoji("Contact Me"),
   subtitle: "Discuss a project or just want to say hi? Send me an email or message me on LinkedIn.",
   // number: "+92-0000000000",
-  email_address: "rsamf@uw.edu"
+  email_address: "rsamfranklin@gmail.com"
 };
 
 // Twitter Section
@@ -448,6 +478,7 @@ export {
   techStack,
   workExperiences,
   openSource,
+  publicationsInfo,
   bigProjects,
   achievementSection,
   awardSection,

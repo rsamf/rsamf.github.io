@@ -15,9 +15,7 @@
   text-decoration: none;
 }
 .splash-title {
-  font-family: "Agustina Regular", cursive;
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 200;
   padding: 0 20px;
 }
