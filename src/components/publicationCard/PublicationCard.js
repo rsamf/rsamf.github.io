@@ -14,8 +14,6 @@ export default function PublicationCard({publication}) {
       : null;
   };
 
-  if (!publication.logo)
-    console.error(`Image of ${publication.name} is missing in publication section`);
   return (
     <div>
       <Fade left duration={1000}>

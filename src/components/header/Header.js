@@ -8,6 +8,7 @@ import {
   workExperiences,
   skillsSection,
   openSource,
+  bigProjects,
   awardSection,
   talkSection,
   achievementSection,
@@ -23,6 +24,7 @@ function Header() {
   const viewAchievement = achievementSection.display;
   const viewAward = awardSection.display;
   const viewTalks = talkSection.display;
+  const viewProjects = bigProjects.display;
 
   return (
     <Headroom>
@@ -57,6 +59,11 @@ function Header() {
           {viewOpenSource && (
             <li>
               <a href="#opensource">Open Source</a>
+            </li>
+          )}
+          {viewProjects && (
+            <li>
+              <a href="#projects">Projects</a>
             </li>
           )}
           {viewAchievement && (
