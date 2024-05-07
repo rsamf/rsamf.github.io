@@ -148,8 +148,12 @@ const techStack = {
       progressPercentage: "80%"
     },
     {
+      Stack: "Go",
+      progressPercentage: "70%"
+    },
+    {
       Stack: "C#",
-      progressPercentage: "80%"
+      progressPercentage: "60%"
     },
     {
       Stack: "C++",
@@ -194,8 +198,8 @@ const workExperiences = {
       date: "January 2020 - September 2022",
       desc: "Developed a wide range of products across multiple teams to deliver value for Maxar's mission: For a Better World",
       descBullets: [
-        "Lead team’s modernization efforts by building out our CI/CD pipeline in GitLab, migrating some infrastructure from self-hosted to AWS with Terraform, migrating from hg to git, and mentoring co-workers on modern-day software development processes",
-        "With internal research and development team, I employed AI/ML processes and enterprise blockchain in Kubernetes",
+        "Led team’s modernization efforts and mentored co-workers on modern-day software development processes",
+        "With internal research and development team, I employed AI/ML processes and enterprise blockchain in Kubernetes using Typescript and Go",
         "With Unity and C#, developed an AR application to assist work processes for manufacturing satellite assemblies",
         "Maintained ground station ETL software to ingest, archive, retrieve, and visualize telemetry using C++ and Python"
       ]
@@ -342,7 +346,7 @@ const achievementSection = {
       footerLink: [
         {
           name: "Certification",
-          url: ""
+          url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/91W0K5KD32R1QTK6"
         }
       ]
     },
