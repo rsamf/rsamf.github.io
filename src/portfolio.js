@@ -181,7 +181,7 @@ const workExperiences = {
       company: "University of Washington",
       companylogo: require("./assets/images/uw-logo.png"),
       date: "October 2022 - August 2023",
-      desc: "Guiding students in building out their creative projects while hile being a graduate student at UW",
+      desc: "Guiding students in building out their creative projects while being a graduate student at UW",
       descBullets: [
         "Guided makers in building their creative projects with my expertise in 3D printing, laser cutting, poster printing, vinyl cutting, and sewing at the Makerspace",
         "Maintained safety and accessibility of Makerspace equipment and tools"
