@@ -25,7 +25,7 @@ const greeting = {
   subTitle: emoji(
     "I have a love for a wide range of topics including Machine Learning, Blockchain, Web/Mobile Application, Cloud/IaC, and ETL."
   ),
-  resumeLink: "https://drive.google.com/file/d/1V3tJcLTpje5wGSh1jfmzRng17wr5Rbxb/view?usp=sharing", // Set to empty to hide the button
+  resumeLink: "https://drive.google.com/file/d/1OD4TCL_NyFIYjklqfe6Vmhh0OjGiAJlJ/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -114,7 +114,7 @@ const educationInfo = {
       descBullets: [
         "Focused my education in Machine Learning",
         "Developed a novel approach to multimodal long-tailed learning for my thesis",
-        "Published a paper to The 24th IEEE International Conference on Mobile Data Management and one more currently under review"
+        "Submitted 2 research papers to data science conferences"
       ]
     },
     {
@@ -165,14 +165,14 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-        role: "Founder",
+        role: "Startup Founder",
         company: "Heddle AI",
         companylogo: require("./assets/images/heddle-logo.png"),
         date: "August 2023 - Present",
         desc: "Building a virtual try-on and clothing recommendation platform for online shoppers and fashion designers",
         descBullets: [
           "Gathering data and designing, training, and evaluating custom ML models for virtual try-on and clothing recommendation systems",
-          "Leading a team of developers to build out a virtual try-on SaaS application",
+          "Leading and mentoring a team of developers to build out a virtual try-on SaaS application",
           "Acting out multiple roles in the startup including software engineer, data scientist, and product manager"
         ]
     },
@@ -194,7 +194,7 @@ const workExperiences = {
       date: "January 2020 - September 2022",
       desc: "Developed a wide range of products across multiple teams to deliver value for Maxar's mission: For a Better World",
       descBullets: [
-        "Built out CI/CD pipeline in GitLab, provisioned infrastructure with AWS and terraform, and lead team's modernization efforts",
+        "Lead team’s modernization efforts by building out our CI/CD pipeline in GitLab, migrating some infrastructure from self-hosted to AWS with Terraform, migrating from hg to git, and mentoring co-workers on modern-day software development processes",
         "With internal research and development team, I employed AI/ML processes and enterprise blockchain in Kubernetes",
         "With Unity and C#, developed an AR application to assist work processes for manufacturing satellite assemblies",
         "Maintained ground station ETL software to ingest, archive, retrieve, and visualize telemetry using C++ and Python"
@@ -410,7 +410,7 @@ const publicationsInfo = {
         year: "2023",
         authors: "Salama, A., Hendawi, A., Franklin, R., Al-Masri, E., Ali, M.",
         url: "https://dl.acm.org/doi/10.1145/3589132.3625649",
-        conference: "SIGSPATIAL '23",
+        conference: "ACM SIGSPATIAL '23",
         descBullets: [
             "This paper presents an efficient system to detecting solar panels from satellite images and visualizing them."
         ]
