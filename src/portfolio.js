@@ -170,13 +170,23 @@ const workExperiences = {
   experience: [
     {
         role: "Startup Founder",
+        company: "Graphbook AI",
+        companylogo: require("./assets/images/graphbook.png"),
+        date: "August 2023 - March 2024",
+        desc: "Building an ML workflow framework for efficient and interactive data processing pipelines",
+        descBullets: [
+          "Developing a Python framework that allows data scientists to build, assemble, and monitor ML batch jobs with ease",
+          "Leading and mentoring a team of developers to build out an ML workflow SaaS application",
+        ]
+    },
+    {
+        role: "Startup Founder",
         company: "Heddle AI",
         companylogo: require("./assets/images/heddle-logo.png"),
-        date: "August 2023 - Present",
+        date: "August 2023 - March 2024",
         desc: "Building a virtual try-on and clothing recommendation platform for online shoppers and fashion designers",
         descBullets: [
-          "Gathering data and designing, training, and evaluating custom ML models for virtual try-on and clothing recommendation systems",
-          "Leading and mentoring a team of developers to build out a virtual try-on SaaS application",
+          "Gathered data, designed, trained, and evaluated custom ML models for virtual try-on and clothing recommendation systems",
           "Acting out multiple roles in the startup including software engineer, data scientist, and product manager"
         ]
     },
@@ -231,17 +241,17 @@ const bigProjects = {
   title: "Projects",
   subtitle: "My highlighted projects that I worked on myself",
   projects: [
-    // {
-    //   image: require("./assets/images/nextuLogo.webp"),
-    //   projectName: "Autonomous Vacuuming Robot (\"Roomba\")",
-    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    //   footerLink: [
-    //     // {
-    //     //   name: "Visit Website",
-    //     //   url: "http://nextu.se/"
-    //     // }
-    //   ]
-    // },
+    {
+      image: require("./assets/images/graphbook.png"),
+      projectName: "Graphbook",
+      projectDesc: "An ML workflow framework to easily build highly efficient and interactive data processing pipelines",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://graphbook.ai"
+        }
+      ]
+    },
     {
       image: require("./assets/images/limelight.jpg"),
       projectName: "Limelight - Collaborative DJ",
@@ -407,20 +417,30 @@ const awardSection = {
 // Publications Section
 const publicationsInfo = {
     title: "Publications",
-    subtitle: "My published papers while at University of Washington",
+    subtitle: "My publications in data science and machine learning conferences",
     publications: [
+      {
+        title: "Text-Guided Mixup Towards Long-Tailed Image Categorization",
+        year: "2024",
+        authors: "Franklin, R., Yao, J., Zhong, D., Qian, Q., Hu, J.",
+        url: "https://arxiv.org/abs/2409.03583",
+        conference: "BMVC",
+        descBullets: [
+            "In this paper, we propose a novel text-guided mixup technique that takes advantage of the semantic relations between classes recognized by the pre-trained text encoder to help alleviate the long-tailed problem"
+        ]
+      },
       {
         title: "SolarDetector: A Transformer-based Neural Network for the Detection and Masking of Solar Panels",
         year: "2023",
         authors: "Salama, A., Hendawi, A., Franklin, R., Al-Masri, E., Ali, M.",
         url: "https://dl.acm.org/doi/10.1145/3589132.3625649",
-        conference: "ACM SIGSPATIAL '23",
+        conference: "ACM SIGSPATIAL",
         descBullets: [
             "This paper presents an efficient system to detecting solar panels from satellite images and visualizing them."
         ]
       }
     ],
-    currentlyInReview: 1,
+    currentlyInReview: 0,
     display: true // Set false to hide this section, defaults to true
 }
 
@@ -470,7 +490,7 @@ const twitterDetails = {
   display: false // Set true to display this section, defaults to false
 };
 
-const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,
