@@ -1,0 +1,152 @@
+export const metadata = {
+  title: 'Building Graphbook: An Open-Source Framework for AI Pipelines',
+  description: 'How I built a DAG-execution framework for parallelized AI-driven data processing',
+  authors: [{ name: 'Richard Franklin', url: 'https://rsamf.github.io' }],
+}
+
+# Building Graphbook: An Open-Source Framework for AI Pipelines
+
+Every developer has that moment. You're copy-pasting the same boilerplate for the third time this week, and something inside you snaps. You think: "There has to be a better way."
+
+For me, that moment came while building ML pipelines for virtual try-on at Heddle AI. I was drowning in spaghetti code—orchestration logic tangled with business logic, retry mechanisms copy-pasted across functions, and debugging that felt like archaeological excavation.
+
+So I did what any reasonable person would do: I built Graphbook.
+
+## The Problem Nobody Talks About
+
+Here's the dirty secret of ML engineering: most of your time isn't spent training models. It's spent wrangling data, debugging pipelines, and figuring out why your DAG failed at 3 AM because someone upstream changed a column name.
+
+The tools we had were either too simple (write everything from scratch) or too complex (enterprise solutions that require a PhD in YAML). I wanted something in between—powerful enough to handle real complexity, but simple enough that I could actually understand what was happening.
+
+## The Napkin Sketch
+
+The initial idea was embarrassingly simple: what if you could build ML pipelines like you sketch ideas on a whiteboard?
+
+Draw boxes. Connect them with arrows. Each box does one thing well. Data flows through the arrows. If something breaks, you can see *exactly* where.
+
+I wanted:
+- **Visual debugging**: See your pipeline, don't imagine it
+- **Parallelization that just works**: If nodes can run in parallel, they should
+- **Observable everything**: Logs, metrics, intermediate results—all visible
+- **Composable building blocks**: Write a node once, reuse it everywhere
+
+Basically, I wanted the developer experience I *wished* I had.
+
+## The Build
+
+I'll be honest—the first version was terrible. Like, "delete the repo and pretend it never happened" terrible.
+
+I tried to be clever. I over-engineered abstractions. I got lost in implementation details while forgetting why I was building this in the first place.
+
+Then I remembered something a mentor once told me: **"Make it work, make it right, make it fast—in that order."**
+
+So I simplified. Ruthlessly.
+
+### The Core Idea
+
+At its heart, Graphbook is built on three primitives:
+
+1. **Nodes**: Self-contained units of work. Each node has inputs, outputs, and a function that transforms one to the other.
+
+2. **Graphs**: DAGs (Directed Acyclic Graphs) that define how data flows between nodes.
+
+3. **Execution Engine**: The magic that figures out what can run in parallel, handles failures gracefully, and gives you visibility into what's happening.
+
+That's it. Everything else is just details.
+
+### The PyTorch Influence
+
+Having spent years with PyTorch, I borrowed heavily from its design philosophy:
+
+- **Pythonic API**: If you know Python, you know how to use Graphbook
+- **Eager execution**: Run nodes immediately, see results instantly
+- **Composability**: Graphs are nodes, so you can nest them infinitely
+- **Debugging-first**: When something breaks, you should know *exactly* why
+
+The goal was to make it feel like writing regular Python, not learning a new framework.
+
+## The Moments That Mattered
+
+### The Parallelization Epiphany
+
+The breakthrough came when I realized I was thinking about parallelization wrong. I was trying to be smart—analyzing the DAG, figuring out optimal scheduling, balancing resources.
+
+Then I had a dumb idea: what if I just let Ray handle it?
+
+I refactored the execution engine to use Ray for distribution. Suddenly, parallelization wasn't a problem anymore. The DAG structure gave Ray everything it needed to figure out optimal execution. I'd been overthinking it.
+
+Sometimes the best solution is to admit someone else already solved your problem.
+
+### The Observability Rabbit Hole
+
+Early versions of Graphbook had terrible debugging. When something failed, you'd get a stack trace and a prayer.
+
+I obsessed over this. Added logging. Then metrics. Then intermediate result caching. Then a web UI to visualize everything.
+
+One night, I was debugging a failed pipeline at 2 AM. I opened the Graphbook UI, saw exactly which node failed, clicked to see its inputs, realized the upstream data was malformed, traced it back three steps, found the bug.
+
+Total time: 4 minutes.
+
+With my old tools? Hours. Maybe days.
+
+That's when I knew I'd built something real.
+
+## Going Open Source
+
+Making Graphbook open source was scary. It's one thing to use it internally. It's another to put it on GitHub and say "here, judge my code."
+
+But the response blew me away. People actually *got it*. They had the same frustrations. They wanted the same solutions.
+
+The best part? The contributions. People added features I hadn't thought of. Found bugs I'd never encounter. Made the documentation actually readable (thank you, contributors—you're the real MVPs).
+
+Open source isn't just about code. It's about finding your people. The ones who care about the same weird problems you do.
+
+## What I Learned
+
+### 1. Solve Your Own Problem First
+
+I didn't build Graphbook to impress people. I built it because I needed it. That authenticity shows. Users can tell when you've actually lived with the problem you're solving.
+
+### 2. Simple Beats Clever
+
+Every time I got clever, I regretted it later. Every time I simplified, users thanked me. The best API is the one you don't have to think about.
+
+### 3. Observability Is Not Optional
+
+You can't debug what you can't see. Invest in visibility early. Your future self will thank you.
+
+### 4. Incremental Beats Perfect
+
+I could've spent years building the "perfect" framework. Instead, I shipped something useful and iterated. Users would rather have a tool that works today than a perfect tool that never ships.
+
+## The Impact
+
+Today, Graphbook is used for everything from image processing pipelines to LLM workflows to robotics data pipelines (yeah, I use it for my own robot work—of course I do).
+
+Seeing people build things I never imagined is wild. Someone used it for genomics research. Another person built a real-time video processing pipeline. Someone else is using it to orchestrate a fleet of web scrapers.
+
+That's the magic of open source: you build a tool for yourself, and it takes on a life of its own.
+
+## What's Next
+
+I have a long list of features I want to add:
+- Better distributed execution strategies
+- Built-in experiment tracking
+- Integration with more ML frameworks
+- Performance optimizations (always more performance)
+
+But I'm also learning to listen more than I build. The community often knows better than I do what Graphbook needs next.
+
+## Try It Yourself
+
+If you're building ML pipelines and feeling the pain, [check out Graphbook](https://github.com/graphbook/graphbook). It's free, open source, and designed by someone who's felt your pain.
+
+Start simple. Build one pipeline. See how it feels. If it clicks, great. If not, no worries—there are lots of great tools out there.
+
+But if you're tired of wrestling with orchestration and just want to build cool things? Graphbook might be your jam.
+
+---
+
+*Graphbook is actively developed and always looking for contributors. Whether it's code, docs, or just ideas—all contributions are welcome. Come build with us.*
+
+*Special thanks to everyone who's contributed, filed issues, or just said "hey, this is cool." You make open source worth it.*

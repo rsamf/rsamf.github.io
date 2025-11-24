@@ -1,0 +1,163 @@
+export const metadata = {
+  title: 'From Satellite Telemetry to AI: My Journey at Maxar Technologies',
+  description: 'Lessons learned from building distributed systems and ML infrastructure at scale',
+  authors: [{ name: 'Richard Franklin', url: 'https://rsamf.github.io' }],
+}
+
+# From Satellite Telemetry to AI: My Journey at Maxar Technologies
+
+My first week at Maxar Technologies, I got lost in the parking lot. Not metaphorically—literally. The campus was enormous. Buildings were named with cryptic codes like "MV3" and "SJ7." I walked in circles for 15 minutes before finding my building.
+
+Turns out, getting lost would become a theme.
+
+## Day One: Welcome to Space Data
+
+"You'll be working on the satellite telemetry processing system," my manager said, pulling up a system architecture diagram that looked like a bowl of spaghetti had an argument with a circuit board.
+
+I nodded confidently, having absolutely no idea what I'd just signed up for.
+
+Here's what I learned in week one: satellites are chatty. They're constantly beaming down data—health metrics, position info, sensor readings, more numbers than you can imagine. And someone has to make sense of all of it.
+
+That someone was now me.
+
+## The Beautiful Mess
+
+The telemetry system was a marvel of engineering and technical debt in equal measure. Parts of it dated back to the early 2000s. Other parts were cutting-edge. It was written in C++, Python, Java, and what I'm pretty sure was ancient Sumerian.
+
+It processed terabytes of data daily. It never stopped. Ever. Because satellites don't stop transmitting just because it's 3 AM and you want to deploy a patch.
+
+My first task? Add a new metric to the visualization dashboard.
+
+What I thought would take a day took three weeks. Not because the code was hard, but because understanding the system was hard. Every function called three others. Every module depended on five more. Documentation was sparse and often wrong.
+
+I spent more time reading code than writing it. And you know what? That turned out to be the best education I could've asked for.
+
+## The Infrastructure Awakening
+
+Six months in, I made a proposal that probably sounded insane: migrate our entire infrastructure to AWS and containerize everything with Docker.
+
+Context: this was a system processing mission-critical satellite data. People don't usually jump to "let's rewrite the infrastructure" for mission-critical systems.
+
+But here's what I'd noticed: we spent more time fighting our infrastructure than building features. Deployments were manual and nerve-wracking. Scaling was a joke. Debugging meant SSH-ing into servers and tailing logs like it was 2008.
+
+I put together a proposal. I expected pushback. Instead, my manager said: "Prove it works for one service, and we'll talk."
+
+## The Great Migration
+
+I picked the smallest, least critical service we had. Something that, if it exploded, wouldn't bring down satellites.
+
+I containerized it. Set up CI/CD with GitLab. Deployed it to AWS ECS. Added monitoring, logging, auto-scaling—the works.
+
+It took three weeks of late nights. But when I demoed it to the team, something clicked. They could see deployments happening in minutes instead of hours. Logs centralized in one place. Resources scaling automatically based on load.
+
+One by one, services got migrated. I became the go-to person for "how do we containerize this?" which was funny because six months earlier, I barely knew what Docker was.
+
+**Lesson learned**: Sometimes the best way to learn is to convince everyone you know what you're doing, then frantically Google everything until you actually do.
+
+## Enter Kubernetes
+
+After Docker came the natural next step: Kubernetes. And if you've ever deployed Kubernetes on-prem, you know the pain.
+
+Cloud K8s is easy—click a button, get a cluster. On-prem K8s is "here's 50 servers, a prayer, and a pile of YAML. Good luck."
+
+I learned more about networking, storage, and distributed systems in those six months than in the previous six years combined. I learned what "split-brain syndrome" means (the hard way). I learned that YAML is humanity's punishment for our hubris.
+
+But I also learned how to build resilient systems. How to design for failure. How to debug problems across dozens of machines.
+
+One time, our ML pipeline crashed mysteriously. Only on Tuesdays. Only between 2-4 PM.
+
+Want to guess what it was? A cron job on a different system that flooded the network with backup traffic, causing packet loss, which triggered a timeout in our pipeline, which caused a cascade failure.
+
+Finding that bug felt like detective work. And I loved every minute of it.
+
+## The AI/ML Chapter
+
+Somewhere along the way, Maxar realized they had satellites generating absurd amounts of imagery. And where there's imagery, there's opportunity for computer vision and ML.
+
+"Hey Richard, you know ML, right?" my manager asked.
+
+I knew *some* ML. I'd taken courses. Done a few projects. But production ML at scale? That was new territory.
+
+So naturally, I said "absolutely" and started Googling furiously.
+
+We built pipelines to detect objects in satellite imagery. To classify land use. To monitor changes over time. I learned about MLOps before it was called MLOps.
+
+I learned that:
+- Training models is 10% of the work
+- Deployment is another 30%
+- Monitoring and maintenance is the remaining 60%
+- Nobody tells you this in school
+
+I learned to love infrastructure. Not despite its complexity, but because of it. Every service, every container, every Kubernetes pod was part of a larger machine. And when it all worked together? Magic.
+
+## The Hackathon Hero Arc
+
+Quick sidebar: I won two internal hackathons at Maxar (Q1 and Q3 2022, if we're keeping score).
+
+Both times, it wasn't because I built the flashiest demo. It was because I built things that solved real problems the team was facing.
+
+Q1: We made the command and telemetry software actually usable. Revolutionary, I know.
+
+Q3: We sped up data processing by 10x by parallelizing what had been a serial workflow.
+
+**Lesson learned**: The best projects aren't the most technically impressive. They're the ones that make people's lives tangibly better.
+
+## The Mentorship Plot Twist
+
+Midway through my time at Maxar, I shifted from being the person asking questions to the person answering them.
+
+New engineers would come to me about Docker, Kubernetes, CI/CD, Python optimization, debugging distributed systems. I became a mentor without realizing it.
+
+Teaching forced me to understand things more deeply. You can't hand-wave when someone asks "but why does it work that way?"
+
+Some of my favorite memories are pair-programming sessions where we'd debug something together, and that moment when it clicks—when you can see the lightbulb turn on. That's the good stuff.
+
+## What Maxar Taught Me
+
+### 1. Systems Thinking
+
+Everything is connected. That bug you're chasing? It's probably three layers removed from where you think it is. Learn to think in systems, not just in code.
+
+### 2. Build for Humans
+
+The best technical solution means nothing if people can't use it. Build for the humans who'll maintain your code at 2 AM.
+
+### 3. Documentation Is Love
+
+Future you will not remember why you did that clever thing. Document it. Your teammates will thank you. Future you will thank you.
+
+### 4. Resilience Over Perfection
+
+Perfect systems don't exist. Resilient systems do. Design for failure. Expect things to break. Build so it doesn't matter when they do.
+
+### 5. Ask Dumb Questions
+
+The "dumb" question you're afraid to ask? Three other people have the same question. Be brave. Ask anyway.
+
+## The Bittersweet Goodbye
+
+I left Maxar in 2022 to pursue Heddle AI and dive deeper into ML research. It was one of the hardest decisions I've made.
+
+Maxar taught me how to engineer at scale. How to mentor. How to build systems that matter. The team there shaped me as an engineer in ways I'm still discovering.
+
+I miss the people. I miss the problems. I miss the casual coffee chats that turned into hour-long technical deep-dives.
+
+But I knew it was time to bet on myself. To take everything I'd learned and build something new.
+
+## To Anyone Starting Out
+
+If you're early in your career and have a chance to work on real infrastructure at scale: take it.
+
+You'll be confused. You'll feel in over your head. You'll spend weeks understanding problems that senior engineers solve in minutes.
+
+Do it anyway.
+
+The best education isn't in the classroom. It's in the trenches, debugging distributed systems at 3 AM, learning from people smarter than you, building things that actually matter.
+
+Maxar gave me that education. I'll be forever grateful.
+
+---
+
+*To my Maxar teammates: thanks for the patience, the mentorship, and the occasional tolerance of my over-caffeinated Slack messages. You know who you are.*
+
+*And to the satellites still beaming down data: keep doing your thing. Someone's out there, making sense of it all.*
