@@ -19,6 +19,7 @@ import {
   BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
+  GYM_POLICIES,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -215,8 +216,50 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            I have a wide background of software engineering experiences, and today, I study and apply Deep Learning for robots' perception, and control.
+            I have a wide background of software engineering experiences, and today, I study and apply Deep Learning for robots' perception and control.
           </p>
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-1 text-lg font-medium">Trained in My Gym</h3>
+        <p className="mb-4 text-zinc-600 dark:text-zinc-400">
+          Humanoid robots trained to mimic a range of human animations with deep reinforcement learning. Code will be released soon.
+        </p>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {GYM_POLICIES.map((policy) => (
+            <a
+              key={policy.name}
+              href={policy.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex flex-col overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900"
+            >
+              <div className="aspect-square w-full overflow-hidden">
+                <img
+                  src={policy.image}
+                  alt={policy.name}
+                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="p-3">
+                <h4 className="font-medium text-zinc-900 dark:text-zinc-100">
+                  {policy.name}
+                </h4>
+                <div className="flex flex-row justify-between">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    {policy.bodyName}
+                  </p>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    {policy.duration}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </motion.section>
 

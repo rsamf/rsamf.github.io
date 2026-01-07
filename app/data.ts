@@ -36,6 +36,24 @@ type SocialLink = {
   link: string
 }
 
+type GymPolicy = {
+  name: string
+  duration: string
+  image: string
+  link: string
+  bodyName: string
+}
+
+export const GYM_POLICIES: GymPolicy[] = [
+  {
+    name: 'Dance',
+    duration: '02:11',
+    image: '/policy-videos/dance.gif',
+    link: 'https://github.com/rsamf',
+    bodyName: 'Unitree G1',
+  },
+]
+
 export const PROJECTS: Project[] = [
   {
     name: 'Wear - AI Virtual Try-On',

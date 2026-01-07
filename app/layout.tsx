@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'Richard Franklin - Machine Learning Engineer',
     template: '%s | Richard Franklin'
   },
-  description: 'Richard Franklin is a Machine Learning Engineer, and has a deep focus on ML for robots\' perception, and control.',
+  description: 'Richard Franklin is a Machine Learning Engineer, and has a deep focus on ML for robots\' perception and control.',
   icons: {
     icon: '/favicon.png',
   },
