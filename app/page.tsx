@@ -216,7 +216,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            I have a wide background of software engineering experiences, and today, I study and apply Deep Learning for robots' perception and control.
+            I have a wide background of software engineering experiences, and today, I study and apply deep learning for robots' perception and control.
           </p>
         </div>
       </motion.section>
