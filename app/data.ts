@@ -22,6 +22,7 @@ type BlogPost = {
   description: string
   link: string
   uid: string
+  date: string
 }
 
 type Publication = {
@@ -146,12 +147,14 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Choosing meaning over prestige, and why I bet on myself instead',
     link: '/blog/why-i-declined-google',
     uid: 'blog-1',
+    date: '2025-11-21',
   },
   {
     title: 'Main, Models, Push!',
     description: 'A working git branching model for ML Training',
     link: '/blog/main-models-push',
     uid: 'blog-2',
+    date: '2026-02-01',
   },
 ]
 

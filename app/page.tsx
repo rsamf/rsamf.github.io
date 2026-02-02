@@ -392,14 +392,24 @@ export default function Personal() {
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
+                className="block w-full -mx-3 rounded-xl px-3 py-3"
                 href={post.link}
                 data-id={post.uid}
               >
                 <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
+                  <div className="flex w-full items-center justify-between">
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {post.title}
+                    </h4>
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        timeZone: 'UTC',
+                      })}
+                    </span>
+                  </div>
                   <p className="text-zinc-500 dark:text-zinc-400">
                     {post.description}
                   </p>
