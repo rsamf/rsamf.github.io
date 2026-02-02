@@ -147,6 +147,12 @@ export const BLOG_POSTS: BlogPost[] = [
     link: '/blog/why-i-declined-google',
     uid: 'blog-1',
   },
+  {
+    title: 'Main, Models, Push!',
+    description: 'A working git branching model for ML Training',
+    link: '/blog/main-models-push',
+    uid: 'blog-2',
+  },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
