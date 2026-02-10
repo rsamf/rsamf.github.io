@@ -50,7 +50,21 @@ export const GYM_POLICIES: GymPolicy[] = [
     name: 'Dance',
     duration: '02:11',
     image: '/policy-videos/dance.gif',
-    link: 'https://github.com/rsamf',
+    link: 'https://github.com/rsamf/add-gym',
+    bodyName: 'Unitree G1',
+  },
+  {
+    name: 'Run',
+    duration: '01:55',
+    image: '/policy-videos/run.gif',
+    link: 'https://github.com/rsamf/add-gym',
+    bodyName: 'Unitree G1',
+  },
+  {
+    name: 'Walk',
+    duration: '02:04',
+    image: '/policy-videos/walk.gif',
+    link: 'https://github.com/rsamf/add-gym',
     bodyName: 'Unitree G1',
   },
 ]

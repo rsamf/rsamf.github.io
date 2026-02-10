@@ -227,7 +227,7 @@ export default function Personal() {
       >
         <h3 className="mb-1 text-lg font-medium">Trained in My Gym</h3>
         <p className="mb-4 text-zinc-600 dark:text-zinc-400">
-          Humanoid robots trained to mimic a range of human animations with deep reinforcement learning. Code will be released soon.
+          Humanoid robots trained to mimic a range of human animations with deep reinforcement learning. Code is available <a href="https://github.com/rsamf/add-gym" className="underline" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           {GYM_POLICIES.map((policy) => (
