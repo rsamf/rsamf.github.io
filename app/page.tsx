@@ -1,4 +1,5 @@
 'use client'
+import { useState, useRef } from 'react'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
@@ -11,6 +12,7 @@ import {
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
 import Link from 'next/link'
+import Image from 'next/image'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
@@ -202,7 +204,21 @@ function MagneticSocialLink({
   )
 }
 
+function JobDescription({ children }: { children: string }) {
+  const ref = useRef(null)
+
+  return (
+    <div ref={ref} className="mt-4">
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            {children}
+        </p>
+    </div>
+  )
+}
+
 export default function Personal() {
+  const [visibleProjects, setVisibleProjects] = useState(4)
+
   return (
     <motion.main
       className="space-y-24"
@@ -216,7 +232,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            I have a wide background of software engineering experiences, and today, I study and apply deep learning for robots' perception and control.
+            I've been coding since I was 12 and have picked up a wide range of software skills along the way. These days, I'm focused on deep learning for robotics perception and control working independently while doing research at University of Washington.
           </p>
         </div>
       </motion.section>
@@ -307,7 +323,7 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-lg font-medium">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
+          {PROJECTS.slice(0, visibleProjects).map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
                 <ProjectVideo
@@ -332,6 +348,16 @@ export default function Personal() {
             </div>
           ))}
         </div>
+        {visibleProjects < PROJECTS.length && (
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={() => setVisibleProjects(PROJECTS.length)}
+              className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+            >
+              See more
+            </button>
+          </div>
+        )}
       </motion.section>
 
       <motion.section
@@ -354,18 +380,34 @@ export default function Personal() {
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
-                    </p>
+                  <div className="flex items-center gap-4">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md bg-zinc-100 dark:bg-zinc-800">
+                      <Image
+                        src={job.image}
+                        alt={`${job.company} logo`}
+                        fill
+                        className="object-contain p-1"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-normal dark:text-zinc-100">
+                        {job.title}
+                      </h4>
+                      <p className="text-zinc-500 dark:text-zinc-400">
+                        {job.company}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="hidden text-zinc-600 sm:block dark:text-zinc-400">
                     {job.start} - {job.end}
                   </p>
                 </div>
+                <div className="mt-2 block sm:hidden">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    {job.start} - {job.end}
+                  </p>
+                </div>
+                <JobDescription>{job.description}</JobDescription>
               </div>
             </a>
           ))}
@@ -392,7 +434,7 @@ export default function Personal() {
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.uid}
-                className="block w-full -mx-3 rounded-xl px-3 py-3"
+                className="block w-full rounded-xl px-3 py-3"
                 href={post.link}
                 data-id={post.uid}
               >

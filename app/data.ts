@@ -14,7 +14,9 @@ type WorkExperience = {
   start: string
   end: string
   link: string
+  description: string
   id: string
+  image: string
 }
 
 type BlogPost = {
@@ -71,9 +73,16 @@ export const GYM_POLICIES: GymPolicy[] = [
 
 export const PROJECTS: Project[] = [
   {
+    name: 'ADD Gym',
+    description: 'Humanoid robots trained to mimic a range of human animations with deep reinforcement learning using the Unitree G1.',
+    link: 'https://github.com/rsamf/add-gym',
+    image: '/policy-videos/dance.gif',
+    id: 'project0',
+  },
+  {
     name: 'Wear - AI Virtual Try-On',
     description:
-      'AI Virtual Try-On app for iOS, Android, and Chrome allowing users to virtually try on clothing from any store.',
+      'Developed a large diffusion-based try-on model allowing users to virtually try on clothing from any store with this app on iOS, Android, and Chrome.',
     link: 'https://heddle.ai/wear',
     video: 'https://youtube.com/shorts/rerPcTzZz8U?feature=share',
     isYouTube: true,
@@ -88,20 +97,20 @@ export const PROJECTS: Project[] = [
     id: 'project2',
   },
   {
-    name: 'Limelight',
-    description: 'iOS app that turns Spotify playlists into a public music queue. Users can vote and add tracks to play on a host device.',
-    link: 'https://appadvice.com/app/limelight-collaborative-dj/1430951858',
-    video: 'https://youtu.be/Ji0dGdRMqEA',
-    isYouTube: true,
-    id: 'project3',
-  },
-  {
     name: 'WoW Fishing Bot',
     description: 'Fishing automation in World of Warcraft using Computer Vision methods with Python and OpenCV.',
     link: 'https://github.com/rsamf/wow-fishing-bot',
     video: 'https://youtu.be/6conRJqjcTE',
     isYouTube: true,
     id: 'project4',
+  },
+  {
+    name: 'Limelight',
+    description: 'iOS app that turns Spotify playlists into a public music queue. Users can vote and add tracks to play on a host device.',
+    link: 'https://appadvice.com/app/limelight-collaborative-dj/1430951858',
+    video: 'https://youtu.be/Ji0dGdRMqEA',
+    isYouTube: true,
+    id: 'project3',
   },
   {
     name: 'Ping Pong Shooting Robot',
@@ -115,11 +124,13 @@ export const PROJECTS: Project[] = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Heddle AI, Inc.',
-    title: 'Technical Founder',
+    title: 'Technical Founder; ML Engineer',
     start: 'Aug 2023',
     end: 'Aug 2025',
     link: 'https://heddle.ai',
     id: 'work1',
+    description: 'Founded an AI startup focused on building a large virtual try-on model. From research papers to product, I curated a large dataset and developed the model to support Wear, a virtual try-on app that allows users to see how clothes will look on them before buying.',
+    image: '/work/heddle.png',
   },
   {
     company: 'Maxar Technologies',
@@ -128,6 +139,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Sep 2022',
     link: 'https://www.maxar.com',
     id: 'work2',
+    description: 'Worked on distributed systems to ingest, archive, and process satellite imagery, contributing to geospatial intelligence solutions. Designed deepfake detection pipelines and developed internal tools to optimize data processing workflows, improving efficiency and accuracy in satellite image analysis.',
+    image: '/work/maxar.png',
   },
   {
     company: 'Ultimate Software, Inc.',
@@ -136,6 +149,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Sep 2018',
     link: 'https://www.ukg.com',
     id: 'work3',
+    description: 'Interned at Ultimate Software, where I contributed to the development of HR software and automated testing tools.',
+    image: '/work/ultimate.png',
   },
 ]
 

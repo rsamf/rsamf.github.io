@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'Richard Franklin - Machine Learning Engineer',
     template: '%s | Richard Franklin'
   },
-  description: 'Richard Franklin is a Machine Learning Engineer, and has a deep focus on ML for robots\' perception and control.',
+  description: 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.',
   icons: {
     icon: '/favicon.png',
   },
@@ -50,7 +50,7 @@ export default function RootLayout({
           enableSystem={true}
           attribute="class"
           storageKey="theme"
-          defaultTheme="system"
+          defaultTheme="dark"
         >
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
