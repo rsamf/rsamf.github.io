@@ -24,6 +24,25 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
   },
+  openGraph: {
+    title: 'Richard Franklin - Machine Learning Engineer',
+    description: 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.',
+    url: 'https://rsamf.github.io/',
+    siteName: 'Richard Franklin',
+    images: [
+      {
+        url: '/policy-videos/dance.gif',
+        alt: 'Robot dancing',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Richard Franklin - Machine Learning Engineer',
+    description: 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.',
+    images: ['/policy-videos/dance.gif'],
+  },
 };
 
 const geist = Geist({
