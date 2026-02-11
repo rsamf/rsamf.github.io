@@ -11,18 +11,41 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 
+const title = 'Richard Franklin - Machine Learning Engineer'
+const description = 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.'
+const ogImage = '/policy-videos/dance.gif'
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://rsamf.github.io/'),
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'Richard Franklin - Machine Learning Engineer',
+    default: title,
     template: '%s | Richard Franklin'
   },
-  description: 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.',
+  description,
   icons: {
     icon: '/favicon.png',
+  },
+  openGraph: {
+    title,
+    description,
+    url: 'https://rsamf.github.io/',
+    siteName: 'Richard Franklin',
+    images: [
+      {
+        url: ogImage,
+        alt: 'Robot dancing',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [ogImage],
   },
 };
 
