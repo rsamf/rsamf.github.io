@@ -232,7 +232,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            I've been coding since I was 12 and have picked up a wide range of software skills along the way. These days, I'm focused on deep learning for robotics perception and control working independently while doing research at University of Washington.
+            I've been coding since I was 12 and have picked up a wide range of software skills along the way. These days, I'm focused on developing AI agents, independently researching robotics perception and control, and doing multi-modal research at University of Washington.
           </p>
         </div>
       </motion.section>
@@ -399,12 +399,12 @@ export default function Personal() {
                     </div>
                   </div>
                   <p className="hidden text-zinc-600 sm:block dark:text-zinc-400">
-                    {job.start} - {job.end}
+                    {job.start} - {job.end ?? "present"}
                   </p>
                 </div>
                 <div className="mt-2 block sm:hidden">
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
+                    {job.start} - {job.end ?? "present"}
                   </p>
                 </div>
                 <JobDescription>{job.description}</JobDescription>

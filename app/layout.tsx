@@ -11,8 +11,8 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 
-const title = 'Richard Franklin - Machine Learning Engineer'
-const description = 'Richard Franklin is a Machine Learning Engineer and Researcher at University of Washington. He\'s been coding since he was 12 and has a deep focus on ML for robotics perception and control.'
+const title = 'Richard Franklin - AI/ML Engineer'
+const description = 'Richard Franklin is an AI Engineer at Apron Health and a Machine Learning Researcher at University of Washington. He\'s been coding since he was 12 and is now an ML for robotics enthusiast focusing on perception and control.'
 const ogImage = '/policy-videos/dance.gif'
 
 export const metadata: Metadata = {

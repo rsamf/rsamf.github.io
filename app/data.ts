@@ -12,7 +12,7 @@ type WorkExperience = {
   company: string
   title: string
   start: string
-  end: string
+  end?: string
   link: string
   description: string
   id: string
@@ -73,6 +73,13 @@ export const GYM_POLICIES: GymPolicy[] = [
 
 export const PROJECTS: Project[] = [
   {
+    name: 'Nebo',
+    description: 'A modern logging SDK for multi-modal data built for humans and AI agents',
+    link: 'https://github.com/rsamf/nebo',
+    image: '/nebo.gif',
+    id: 'project6',
+  },
+  {
     name: 'ADD Gym',
     description: 'Humanoid robots trained to mimic a range of human animations with deep reinforcement learning using the Unitree G1.',
     link: 'https://github.com/rsamf/add-gym',
@@ -122,6 +129,15 @@ export const PROJECTS: Project[] = [
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
+  {
+    company: 'Apron Health',
+    title: 'AI Engineer',
+    start: 'Apr 2026',
+    link: 'https://apron.health',
+    id: 'work0',
+    description: 'AI for medical clinics',
+    image: '/work/apron.png',
+  },
   {
     company: 'Heddle AI, Inc.',
     title: 'Technical Founder; ML Engineer',
