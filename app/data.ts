@@ -188,17 +188,24 @@ export const PUBLICATIONS: Publication[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    title: 'Agentic ML Training',
+    description: 'What happens when Claude Code runs the loop overnight',
+    link: '/blog/agentic-ml-training',
+    uid: 'blog-3',
+    date: '2026-08-14',
+  },
+  {
     title: 'Why I Declined my Google Job Offer And You Shouldn\'t',
     description: 'Choosing meaning over prestige, and why I bet on myself instead',
     link: '/blog/why-i-declined-google',
-    uid: 'blog-1',
+    uid: 'blog-2',
     date: '2025-11-21',
   },
   {
     title: 'Main, Models, Push!',
     description: 'A working git branching model for ML Training',
     link: '/blog/main-models-push',
-    uid: 'blog-2',
+    uid: 'blog-1',
     date: '2026-02-01',
   },
 ]
@@ -213,5 +220,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     link: 'https://www.linkedin.com/in/rsamf',
   },
 ]
+
+export const QUOTE = {
+  text: 'A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyse a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.',
+  author: 'Robert A. Heinlein',
+  source: 'Time Enough for Love',
+}
 
 export const EMAIL = 'rsamfranklin@gmail.com'

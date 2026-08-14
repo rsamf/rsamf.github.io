@@ -1,0 +1,80 @@
+# Agentic ML Training: what happens when Claude Code runs the loop overnight
+
+<span className="text-sm text-zinc-500 dark:text-zinc-400">August 14, 2026</span>
+
+These days, the first thing I read in the morning is my AI agent's overnight training report. Add that to my routine doomscroll. ☕
+
+<Note>
+  [Nebo](https://github.com/rsamf/nebo) is a modern, local-first logging SDK for multi-modal experiment data built for humans and AI agents, and it's going into public preview today. It's fully open source, MIT licensed, and it always will be. I built it with coding agents, for coding agents, and this post is about why that isn't just a tagline.
+</Note>
+
+For the last five weeks I've been running a from-scratch reimplementation of Robust and Generalized Humanoid Motion Tracking ([RGMT](https://arxiv.org/abs/2601.23080)), a reinforcement learning method for training a humanoid robot to track general motion capture data. Claude Code read the paper and wrote most of the implementation in the first week: the reward terms, the network, the physics tracking logic. That part alone was a good demonstration that a coding agent can take a paper and turn it into working training code.
+
+But the part I actually want to write about is what happened after the code was written and the training started. Most nights since, I wasn't the one watching the run. Claude Code was.
+
+## The Agent Loop
+
+Here's what a night looks like now. I ask Claude Code to launch a training run, and it does, detached, on its own. Then instead of babysitting a terminal, it arms a watch through Nebo and goes and does something else, or just waits, until something happens worth waking up for whether it be a checkpoint hits a target, a run finishes, or gradients explode.
+
+Claude Code has a heartbeat feature (/loop), and when it wakes up, it checks the numbers and decides whether the run is worth continuing. If we'd agreed on a stopping rule ahead of time, something like "stop as soon as the easy cases stop improving," it applies that rule itself instead of burning the full compute budget on autopilot. It writes what it found back where I'll see it, attached to that run, so I can read the result over coffee instead of reconstructing it from a terminal window that's long since closed. It's a real loop. Launch, watch, decide, report, and often, act on what it decided.
+
+The clearest example of that loop closing on itself happened a few weeks into the campaign. A run had been training well for hours, holding steady, and then it wasn't. One bad update wrecked the policy in a matter of minutes, and nothing that followed fixed it. The agent watching the run metrics saw the anomaly and determined it wasn't just a blip. It stopped the run right there instead of spending another day of GPU time on a policy that wasn't coming back, and it wrote up a detailed report on what happened and why.
+
+<figure>
+  <div className="flex justify-center [&_p]:my-0 [&_img]:my-0">
+    ![Success rate chart of the collapsed run: the policy climbs to a peak of 78.9% and holds steady for tens of thousands of steps, then falls off a cliff to 0.1% around step 30,000](/blogs/agentic-ml-training/success_rate_alert.jpeg)
+  </div>
+
+  <figcaption className="text-center">
+    **The success rate that tanked.** Instead of burning more compute, the agent picked up on the anomaly at 0.1%, and it cancelled the run and wrote a report.
+  </figcaption>
+</figure>
+
+Then it did the part that actually sold me on this whole pattern. It didn't stop at reporting the failure. It went and fixed the cause: it added a guard to the training code that snapshots the model before each update and rolls it back if that update turns out to be destructive. The next comparable run I kicked off, that guard caught several bad updates the same way and undid every one of them before they could do any damage. No collapse, no lost day. An agent diagnosed a failure at 2am, designed the fix, and days later I had evidence it worked, without me being there for either half of it.
+
+## AI is the Primary User
+
+None of that works if the tool the agent depends on wasn't built with the agent in mind. This is the part that changed how I think about Nebo while I was building it: agents haven't just been using it, they've been shaping it.
+
+Some of that shaping came from ordinary friction. The same "wait for something interesting, then go back to waiting" pattern that makes the agent loop work had an annoying flaw early on: an agent that handled one alert and re-armed itself would immediately wake back up on the exact alert it had just dealt with. The agent working through it wrote a small patch of its own to get around the problem, and that friction got reported back and folded into how Nebo's alerting works today. In a separate project, an agent trying to pull structured results out of Nebo through the command line found it couldn't get clean output without an extra step first, a small thing, but it meant a detour of guessing and discovery before the agent could get to the work it was actually there to do. That's fixed now too.
+
+The other half of the shaping isn't about bug reports so much as it's about who's writing the thing. A majority of Nebo's own commit history carries a co-author line crediting Claude. I've been building this tool with the same kind of agent that's meant to use it, which means the agent doing the work is also, in a very direct sense, the one telling me whether the work holds up. It's a strange kind of dogfooding, and it's a big part of why I trust the design as much as I do.
+
+## Try Nebo Today
+
+Coding agents are already good enough to take a paper and turn it into working training code, and RGMT is proof of that for me. But to run the whole campaign, what they need next is a CLI to query and monitor metrics that wakes them up based on certain signals. That's what I built Nebo to be, and **I'm launching it in public preview today** 🎉.
+
+Nebo is a local-first experiment tracker: one file per run, no account, nothing to stand up before you can start logging. Point a daemon at it when you want a live view or a mobile-friendly dashboard. Install the agent skills and Claude Code, or Codex, or anything that reads an AGENTS.md, knows how to use it right away.
+
+```bash
+pip install nebo
+nebo skills install
+nebo serve
+```
+
+And on the surface, it works like any other ML experiment tracker:
+
+```python
+import torch
+import nebo as nb
+
+nb.start_run(name="v1", group="mnist/classify")
+Y = torch.randn(100, 4)
+for batch in nb.track(Y):  # progress tracking
+    loss = torch.rand(())
+    acc = torch.rand(())
+
+    nb.log_line("loss", loss)
+    nb.log_line("acc", acc)
+```
+
+MIT licensed, and it always will be.
+
+* Source: [github.com/rsamf/nebo](https://github.com/rsamf/nebo)
+* Docs: [nebo.rsamf.com/docs](https://nebo.rsamf.com/docs).
+
+I'm looking for feedback. Feel free to submit an issue on GitHub.
+
+---
+
+*If you're running long training campaigns and thinking about handing more of the loop to an agent, I'd love to hear how it goes. My DMs are open.*

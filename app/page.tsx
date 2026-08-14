@@ -22,6 +22,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
   GYM_POLICIES,
+  QUOTE,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -480,6 +481,20 @@ export default function Personal() {
             </MagneticSocialLink>
           ))}
         </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <blockquote className="border-l-2 border-zinc-200 pl-4 dark:border-zinc-800">
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            &ldquo;{QUOTE.text}&rdquo;
+          </p>
+          <footer className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            &mdash; {QUOTE.author}, <cite>{QUOTE.source}</cite>
+          </footer>
+        </blockquote>
       </motion.section>
     </motion.main>
   )
