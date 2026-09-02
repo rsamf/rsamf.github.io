@@ -14,6 +14,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { AnimatedBackground } from '@/components/ui/animated-background'
+import { YouTubeClip } from '@/components/ui/youtube-clip'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
@@ -51,11 +52,10 @@ type ProjectVideoProps = {
 }
 
 function ProjectVideo({ src, imageSrc, isYouTube = false }: ProjectVideoProps) {
-  // Extract YouTube video ID from URL for embed
-  const getYouTubeEmbedUrl = (url: string) => {
+  // Extract YouTube video ID from a watch, shorts, or youtu.be URL
+  const getYouTubeId = (url: string) => {
     const regex = /(?:youtube\.com\/shorts\/|youtu\.be\/|youtube\.com\/watch\?v=)([^&\n?#]+)/
-    const match = url.match(regex)
-    return match ? `https://www.youtube.com/embed/${match[1]}?autoplay=1&mute=1&loop=1&playlist=${match[1]}` : url
+    return url.match(regex)?.[1]
   }
 
   // If we have an image, render image content
@@ -104,12 +104,12 @@ function ProjectVideo({ src, imageSrc, isYouTube = false }: ProjectVideoProps) {
   // Video content (existing logic)
   if (!src) return null
 
-  const videoContent = isYouTube ? (
-    <iframe
-      src={getYouTubeEmbedUrl(src)}
+  const youTubeId = isYouTube ? getYouTubeId(src) : undefined
+
+  const videoContent = youTubeId ? (
+    <YouTubeClip
+      videoId={youTubeId}
       className="aspect-video w-full cursor-zoom-in rounded-xl"
-      allow="autoplay; encrypted-media"
-      allowFullScreen
     />
   ) : (
     <video
@@ -117,16 +117,15 @@ function ProjectVideo({ src, imageSrc, isYouTube = false }: ProjectVideoProps) {
       autoPlay
       loop
       muted
+      playsInline
       className="aspect-video w-full cursor-zoom-in rounded-xl"
     />
   )
 
-  const expandedVideoContent = isYouTube ? (
-    <iframe
-      src={getYouTubeEmbedUrl(src)}
+  const expandedVideoContent = youTubeId ? (
+    <YouTubeClip
+      videoId={youTubeId}
       className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-      allow="autoplay; encrypted-media"
-      allowFullScreen
     />
   ) : (
     <video
@@ -134,6 +133,7 @@ function ProjectVideo({ src, imageSrc, isYouTube = false }: ProjectVideoProps) {
       autoPlay
       loop
       muted
+      playsInline
       className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
     />
   )

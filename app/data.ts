@@ -73,6 +73,13 @@ export const GYM_POLICIES: GymPolicy[] = [
 
 export const PROJECTS: Project[] = [
   {
+    name: 'Asimov RGMT',
+    description: 'A general motion-tracking policy trained with dynamics-conditioning and command-aggregation outputting residual actions on top of PD tracking',
+    link: 'https://github.com/rsamf/asimov-rgmt',
+    video: '/clips/asimov-rgmt.mp4', // source: https://youtu.be/Cqr67H9y91E
+    id: 'project7'
+  },
+  {
     name: 'Nebo',
     description: 'A modern logging SDK for multi-modal data built for humans and AI agents',
     link: 'https://github.com/rsamf/nebo',
@@ -81,42 +88,37 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'ADD Gym',
-    description: 'Humanoid robots trained to mimic a range of human animations with deep reinforcement learning using the Unitree G1.',
+    description: 'Humanoid robots trained to mimic a range of human animations with deep reinforcement learning using the Unitree G1',
     link: 'https://github.com/rsamf/add-gym',
     image: '/policy-videos/dance.gif',
     id: 'project0',
   },
   {
     name: 'Wear - AI Virtual Try-On',
-    description:
-      'Developed a large diffusion-based try-on model allowing users to virtually try on clothing from any store with this app on iOS, Android, and Chrome.',
+    description: 'A large diffusion-based try-on model allowing users to virtually try on clothing from any store with this app on iOS, Android, and Chrome',
     link: 'https://heddle.ai/wear',
-    video: 'https://youtube.com/shorts/rerPcTzZz8U?feature=share',
-    isYouTube: true,
+    video: '/clips/wear.mp4', // source: https://youtube.com/shorts/rerPcTzZz8U
     id: 'project1',
   },
   {
     name: 'Graphbook',
     description: 'Open-source observability and DAG-execution framework for building highly parallelized AI-driven data processing pipelines.',
-    link: 'https://graphbook.ai',
-    video: 'https://www.youtube.com/watch?v=kIvTRSGnT0U',
-    isYouTube: true,
+    link: 'https://github.com/graphbookai/graphbook',
+    video: '/clips/graphbook.mp4', // source: https://www.youtube.com/watch?v=kIvTRSGnT0U
     id: 'project2',
   },
   {
     name: 'WoW Fishing Bot',
     description: 'Fishing automation in World of Warcraft using Computer Vision methods with Python and OpenCV.',
     link: 'https://github.com/rsamf/wow-fishing-bot',
-    video: 'https://youtu.be/6conRJqjcTE',
-    isYouTube: true,
+    video: '/clips/wow-fishing-bot.mp4', // source: https://youtu.be/6conRJqjcTE
     id: 'project4',
   },
   {
     name: 'Limelight',
     description: 'iOS app that turns Spotify playlists into a public music queue. Users can vote and add tracks to play on a host device.',
     link: 'https://appadvice.com/app/limelight-collaborative-dj/1430951858',
-    video: 'https://youtu.be/Ji0dGdRMqEA',
-    isYouTube: true,
+    video: '/clips/limelight.mp4', // source: https://youtu.be/Ji0dGdRMqEA
     id: 'project3',
   },
   {
